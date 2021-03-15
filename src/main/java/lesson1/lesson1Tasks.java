@@ -68,6 +68,26 @@ public class lesson1Tasks {
         System.out.println(resVar);
     }
 
+    static void printIsLeapYearOptimized(short yearVar) {
+        String resVar;
+
+        if (yearVar > 0  && yearVar % 4 == 0) {
+                if (yearVar % 100 == 0) {
+                    if (yearVar % 400 == 0) {
+                        resVar = "Високосный год";
+                    } else {
+                        resVar = "Не високосный год";
+                    }
+                } else {
+                    resVar = "Високосный год";
+                }
+            } else {
+                resVar = "Не високосный год";
+            }
+
+        System.out.println(resVar);
+    }
+
     // объявлен метод main в новом проекте (задание 1)
     public static void main(String[] args) {
         // инициализированы переменные всех типов (задание 2)
@@ -107,8 +127,12 @@ public class lesson1Tasks {
         helloSubj(subj);
 
         //вызов printIsLeapYear (задание 8)
-        short leapYear = 2020;
+        short leapYear = 2021;
+        
         System.out.println("\nTask8 printIsLeapYear result:");
         printIsLeapYear(leapYear);
+
+        System.out.println("\nTask8 printIsLeapYearOptimized result:");
+        printIsLeapYearOptimized(leapYear);
     }
 }
